@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+
+*{
+  font-family: monospace;
+}
+
+.sidebar-item {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.sidebar-item:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #f3f4ec, #f3f4ec);
+  opacity: 0;
+  border-radius: 0.375rem;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-item:hover:before {
+  opacity: 0.2;
+}
+
+.sidebar-item.active:before {
+  opacity: 0.4;
+}
+
+
+.rounded-table {
+  border-collapse: separate; /* Required for border-radius to work */
+  border-spacing: 0; /* Optional, removes extra spacing between cells */
+  width: 100%;
+  border: 2px solid #ddd; /* Outer border */
+  border-radius: 10px; /* Rounds the outer border */
+  overflow: hidden; /* Ensures the border-radius cuts off contents outside */
+}
+
+.rounded-table th,
+.rounded-table td {
+  border: 1px solid #ddd; 
+  padding: 8px;
+  text-align: left;
+}
+
+.rounded-table th {
+  background-color: #f4f4f4;
+}
+
+.rounded-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; }
